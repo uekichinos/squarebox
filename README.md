@@ -17,5 +17,4 @@ password: admin123
 
 ## Additional
 
-Configure your server to run scheduler.
-* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
+1. configure your server to run scheduler.
