@@ -32,6 +32,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Path
+    |--------------------------------------------------------------------------
+    |
+    | Application path to CMS.
+    |
+    */
+
+    'backend_path' => env('BACKEND_PATH', 'backend'),
+    
+    /*
+    |--------------------------------------------------------------------------
     | Application Debug Mode
     |--------------------------------------------------------------------------
     |
@@ -185,6 +196,9 @@ return [
         /*
          * Package Service Providers...
          */
+        Spatie\Permission\PermissionServiceProvider::class,
+        Lab404\Impersonate\ImpersonateServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -210,6 +224,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Image' => Intervention\Image\Facades\Image::class,
     ])->toArray(),
 
 ];
