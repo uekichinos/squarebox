@@ -43,6 +43,7 @@ class PermissionRoleUserSeeder extends Seeder
             'Maintenance Setting',
             'Header Setting',
             'Agent Setting',
+            'Application Log'
         ];
 
         // create permissions

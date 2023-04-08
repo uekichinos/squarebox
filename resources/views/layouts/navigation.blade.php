@@ -22,7 +22,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard.index')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     @if(auth()->user()->can('List User') || auth()->user()->can('Create User') || auth()->user()->can('Update User') || auth()->user()->can('View User') || auth()->user()->can('Delete User') || auth()->user()->can('List Role') || auth()->user()->can('Create Role') || auth()->user()->can('Update Role') || auth()->user()->can('View Role') || auth()->user()->can('Delete Role') || auth()->user()->can('List Permission'))
@@ -32,7 +32,12 @@
                     @endif
                     @if(auth()->user()->can('Analytics Setting') || auth()->user()->can('Password Setting') || auth()->user()->can('Announcement Setting') || auth()->user()->can('Maintenance Setting') || auth()->user()->can('Header Setting') || auth()->user()->can('Agent Setting'))
                         <x-nav-link :href="route('setting.ga.edit')" :active="request()->routeIs('setting.ga.edit') || request()->routeIs('setting.password.edit') || request()->routeIs('setting.announce.edit') || request()->routeIs('setting.maintenance.edit') || request()->routeIs('setting.header.edit') || request()->routeIs('setting.agent.edit')">
-                            {{ __('Setting') }}
+                            {{ __('Settings') }}
+                        </x-nav-link>
+                    @endif
+                    @if(auth()->user()->can('Application Log'))
+                        <x-nav-link :href="route('log.app')" :active="request()->routeIs('log.app')">
+                            {{ __('Logs') }}
                         </x-nav-link>
                     @endif
                 </div>
@@ -88,7 +93,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard.index')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
             @if(auth()->user()->can('List User') || auth()->user()->can('Create User') || auth()->user()->can('Update User') || auth()->user()->can('View User') || auth()->user()->can('Delete User') || auth()->user()->can('List Role') || auth()->user()->can('Create Role') || auth()->user()->can('Update Role') || auth()->user()->can('View Role') || auth()->user()->can('Delete Role') || auth()->user()->can('List Permission'))
@@ -98,7 +103,12 @@
             @endif
             @if(auth()->user()->can('Analytics Setting') || auth()->user()->can('Password Setting') || auth()->user()->can('Announcement Setting') || auth()->user()->can('Maintenance Setting') || auth()->user()->can('Header Setting') || auth()->user()->can('Agent Setting'))
                 <x-responsive-nav-link :href="route('setting.ga.edit')" :active="request()->routeIs('setting.ga.edit') || request()->routeIs('setting.password.edit') || request()->routeIs('setting.announce.edit') || request()->routeIs('setting.maintenance.edit') || request()->routeIs('setting.header.edit') || request()->routeIs('setting.agent.edit')">
-                    {{ __('Setting') }}
+                    {{ __('Settings') }}
+                </x-responsive-nav-link>
+            @endif
+            @if(auth()->user()->can('Application Log'))
+                <x-responsive-nav-link :href="route('log.app')" :active="request()->routeIs('log.app')">
+                    {{ __('Logs') }}
                 </x-responsive-nav-link>
             @endif
         </div>

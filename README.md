@@ -1,20 +1,52 @@
-# Laravel Boilerplate
+
+# SquareBox
+
+SquareBox is a Laravel CMS Boilerplate.
+
+- Users 
+    - User impersonation
+    - "I'm online" status
+- Roles and Permissions 
+    - Configure default role upon register
+- Google analytics
+    - Tracking both web and/or admin page
+- Announcement
+    - Start date and end date
+    - Auto disable once reach end date
+- Maintenance page
+    - Email secret token to admins when page is under maintenance
+- Password
+    - Configure password strength
+    - Password history
+    - Cold down period
+- Header
+    - Configure application name and image/logo
+- Browser Agent
+    - Capture browser agent type
+- Application log
+    - Manage laravel application logs
 
 ## Installation
 
-1. php artisan key:generate
+```bash
+  php artisan key:generate
+```
 
-2. php artisan storage:link
+```bash
+  php artisan storage:link
+``` 
 
-3. composer install
+```bash
+  composer install
+``` 
 
-4. php artisan migrate --seed
+```bash
+  php artisan migrate --seed
+``` 
 
-## Login details
+Configure your server to run the scheduler. For more info https://laravel.com/docs/10.x/scheduling#running-the-scheduler.
 
-username: admin@localhost.com
+## Login Detail
+email: admin@localhost.com
+
 password: admin123
-
-## Additional
-
-1. configure your server to run scheduler.

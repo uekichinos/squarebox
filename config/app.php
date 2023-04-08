@@ -199,6 +199,7 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
         Lab404\Impersonate\ImpersonateServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
         /*
          * Application Service Providers...

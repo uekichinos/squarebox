@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Config;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
@@ -93,6 +94,9 @@ Route::group(['prefix' => Config::get('app.backend_path'), 'middleware' => ['aut
         Route::get('/profile/picture', 'EditPicture')->name('picture.edit');
         Route::put('/profile/picture', 'UpdatePicture')->name('picture.update');
     });
+
+    /** logs */
+    Route::get('log/application', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index'])->name('log.app');
 });
 
 require __DIR__.'/auth.php';

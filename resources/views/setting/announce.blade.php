@@ -15,7 +15,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="grid grid-cols-12 gap-4 mb-3">
-                <div class="col-span-6 text-xl text-gray-800">{{ __('Setting') }} &raquo; {{ __('Announcement') }}</div>
+                <div class="col-span-6 text-xl text-gray-800">{{ __('Settings') }} &raquo; {{ __('Announcement') }}</div>
                 <div class="col-span-6 space-x-8 sm:-my-px sm:ml-10 text-right"></div>
             </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
